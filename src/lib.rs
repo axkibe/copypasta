@@ -66,6 +66,8 @@ pub type ClipboardContext = osx_clipboard::OSXClipboardContext;
 pub type ClipboardContext = nop_clipboard::NopClipboardContext; // TODO: implement AndroidClipboardContext
 #[cfg(target_os = "ios")]
 pub type ClipboardContext = nop_clipboard::NopClipboardContext; // TODO: implement IOSClipboardContext
+#[cfg(target_os = "emscripten")]
+pub type ClipboardContext = nop_clipboard::NopClipboardContext;
 #[cfg(not(any(
     unix,
     windows,
